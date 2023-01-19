@@ -16,6 +16,12 @@ blank.addEventListener(
 
 blank.addEventListener('submit', e => {
   e.preventDefault();
+  if (email.value === '') {
+    return alert('Please fill in the "Email"!');
+  } else if (message.value === '') {
+    return alert('Please fill in the "message"!');
+  }
+
   console.log({ email: email.value, message: message.value });
   blank.reset();
   localStorage.removeItem(LOCALSTORAGE_INFO);
